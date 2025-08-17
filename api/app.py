@@ -1,6 +1,7 @@
-# api/app.py
-from app import create_app
-from app.utils.db import init_db
+from flask import Flask
 
-init_db()
-app = create_app()
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello from SEASHARE deployed on Vercel!"
